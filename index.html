@@ -33,19 +33,10 @@
             color: #222;
         }
 
-        /* 商品展示主体 - 左右分栏布局 */
+        /* 商品展示主体 - 网格布局（适配更多商品） */
         .product-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* 左右商品列 */
-        .product-column {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -55,7 +46,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 优化过渡效果 */
+            transition: transform 0.3s ease;
         }
 
         .product-item:hover {
@@ -68,7 +59,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            display: block; /* 消除图片底部空白 */
         }
 
         /* 商品信息 */
@@ -80,7 +70,6 @@
             font-size: 18px;
             margin-bottom: 8px;
             color: #333;
-            font-weight: 500; /* 优化字体粗细 */
         }
 
         .product-price {
@@ -91,14 +80,9 @@
 
         /* 响应式适配 */
         @media (max-width: 768px) {
-            .product-grid {
-                flex-direction: column;
-            }
-            
             .page-title {
                 font-size: 24px;
             }
-            
             .product-img {
                 height: 180px;
             }
@@ -108,67 +92,97 @@
 <body>
     <div class="container">
         <!-- 页面标题 -->
-        <h1 class="page-title">新袁布行家访</h1>
+        <h1 class="page-title">新袁家纺</h1>
 
-        <!-- 商品展示主体 - 左右分栏 -->
+        <!-- 商品展示主体 - 网格布局（10个商品） -->
         <div class="product-grid">
-            <!-- 左侧商品列 -->
-            <div class="product-column">
-                <!-- 商品1 -->
-                <div class="product-item">
-                    <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260225195718_1_2.jpg?random=1" alt="无线蓝牙耳机" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">无线蓝牙耳机</h3>
-                        <div class="product-price">¥ 299.00</div>
-                    </div>
-                </div>
-
-                <!-- 商品2 -->
-                <div class="product-item">
-                    <img src="https://picsum.photos/600/400?random=2" alt="智能手表" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">多功能智能手表</h3>
-                        <div class="product-price">¥ 599.00</div>
-                    </div>
-                </div>
-
-                <!-- 商品3 -->
-                <div class="product-item">
-                    <img src="https://picsum.photos/600/400?random=3" alt="便携充电宝" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">20000mAh便携充电宝</h3>
-                        <div class="product-price">¥ 129.00</div>
-                    </div>
+            <!-- 商品1 - 1.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/1.jpg" alt="商品1" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品1</h3>
+                    <div class="product-price">¥ 299.00</div>
                 </div>
             </div>
 
-            <!-- 右侧商品列 -->
-            <div class="product-column">
-                <!-- 商品4 -->
-                <div class="product-item">
-                    <img src="https://picsum.photos/600/400?random=4" alt="机械键盘" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">机械键盘青轴</h3>
-                        <div class="product-price">¥ 399.00</div>
-                    </div>
+            <!-- 商品2 - 2.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/2.jpg" alt="商品2" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品2</h3>
+                    <div class="product-price">¥ 599.00</div>
                 </div>
+            </div>
 
-                <!-- 商品5 -->
-                <div class="product-item">
-                    <img src="https://picsum.photos/600/400?random=5" alt="无线鼠标" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">静音无线鼠标</h3>
-                        <div class="product-price">¥ 89.00</div>
-                    </div>
+            <!-- 商品3 - 3.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/3.jpg" alt="商品3" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品3</h3>
+                    <div class="product-price">¥ 129.00</div>
                 </div>
+            </div>
 
-                <!-- 商品6 -->
-                <div class="product-item">
-                    <img src="https://picsum.photos/600/400?random=6" alt="高清显示器" class="product-img">
-                    <div class="product-meta">
-                        <h3 class="product-name">27英寸4K显示器</h3>
-                        <div class="product-price">¥ 1999.00</div>
-                    </div>
+            <!-- 商品4 - 4.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/4.jpg" alt="商品4" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品4</h3>
+                    <div class="product-price">¥ 399.00</div>
+                </div>
+            </div>
+
+            <!-- 商品5 - 5.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/5.jpg" alt="商品5" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品5</h3>
+                    <div class="product-price">¥ 89.00</div>
+                </div>
+            </div>
+
+            <!-- 商品6 - 6.jpg -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/6.jpg" alt="商品6" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品6</h3>
+                    <div class="product-price">¥ 1999.00</div>
+                </div>
+            </div>
+
+            <!-- 商品7 - 7.jpg（新增） -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/7.jpg" alt="商品7" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品7</h3>
+                    <div class="product-price">¥ 159.00</div>
+                </div>
+            </div>
+
+            <!-- 商品8 - 8.jpg（新增） -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/8.jpg" alt="商品8" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品8</h3>
+                    <div class="product-price">¥ 259.00</div>
+                </div>
+            </div>
+
+            <!-- 商品9 - 9.jpg（新增） -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/9.jpg" alt="商品9" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品9</h3>
+                    <div class="product-price">¥ 359.00</div>
+                </div>
+            </div>
+
+            <!-- 商品10 - 10.jpg（新增） -->
+            <div class="product-item">
+                <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/10.jpg" alt="商品10" class="product-img">
+                <div class="product-meta">
+                    <h3 class="product-name">新袁家纺商品10</h3>
+                    <div class="product-price">¥ 459.00</div>
                 </div>
             </div>
         </div>
