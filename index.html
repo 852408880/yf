@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品展示页</title>
+    <title>新袁家纺布行</title>
     <style>
         /* 全局样式重置 */
         * {
@@ -25,12 +25,42 @@
             margin: 0 auto;
         }
 
-        /* 页面标题 */
+        /* 页面标题 - 已修改为红色 */
         .page-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* 调整间距，给导航栏留空间 */
             font-size: 28px;
-            color: #222;
+            color: #ff0000; /* 核心修改：把原来的#222改成红色#ff0000 */
+        }
+
+        /* 新增导航栏样式 */
+        .nav-bar {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 30px; /* 分类之间的间距 */
+            height: 60px; /* 导航栏高度 */
+        }
+
+        .nav-item {
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ff0000; /* 鼠标悬浮变红，和标题颜色呼应 */
+            font-weight: bold;
         }
 
         /* 商品展示主体 - 网格布局（适配更多商品） */
@@ -82,6 +112,17 @@
         @media (max-width: 768px) {
             .page-title {
                 font-size: 24px;
+                color: #ff0000; /* 响应式下也保持红色 */
+            }
+            /* 导航栏响应式调整 */
+            .nav-list {
+                gap: 15px;
+                height: auto;
+                padding: 15px 0;
+                flex-wrap: wrap; /* 小屏幕自动换行 */
+            }
+            .nav-item {
+                font-size: 16px;
             }
             .product-img {
                 height: 180px;
@@ -94,6 +135,17 @@
         <!-- 页面标题 -->
         <h1 class="page-title">新袁家纺</h1>
 
+        <!-- 新增分类导航栏 -->
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-item">分类一</li>
+                <li class="nav-item">分类二</li>
+                <li class="nav-item">分类三</li>
+                <li class="nav-item">分类四</li>
+                <li class="nav-item">分类五</li>
+            </ul>
+        </nav>
+
         <!-- 商品展示主体 - 网格布局（10个商品） -->
         <div class="product-grid">
             <!-- 商品1 - 1.jpg -->
@@ -101,7 +153,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/1.jpg" alt="商品1" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品1</h3>
-                    <div class="product-price">¥ 299.00</div>
                 </div>
             </div>
 
@@ -110,7 +161,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/2.jpg" alt="商品2" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品2</h3>
-                    <div class="product-price">¥ 599.00</div>
                 </div>
             </div>
 
@@ -119,7 +169,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/3.jpg" alt="商品3" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品3</h3>
-                    <div class="product-price">¥ 129.00</div>
                 </div>
             </div>
 
@@ -128,7 +177,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/4.jpg" alt="商品4" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品4</h3>
-                    <div class="product-price">¥ 399.00</div>
                 </div>
             </div>
 
@@ -137,7 +185,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/5.jpg" alt="商品5" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品5</h3>
-                    <div class="product-price">¥ 89.00</div>
                 </div>
             </div>
 
@@ -146,7 +193,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/6.jpg" alt="商品6" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品6</h3>
-                    <div class="product-price">¥ 1999.00</div>
                 </div>
             </div>
 
@@ -155,7 +201,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/7.jpg" alt="商品7" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品7</h3>
-                    <div class="product-price">¥ 159.00</div>
                 </div>
             </div>
 
@@ -164,7 +209,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/8.jpg" alt="商品8" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品8</h3>
-                    <div class="product-price">¥ 259.00</div>
                 </div>
             </div>
 
@@ -173,7 +217,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/9.jpg" alt="商品9" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品9</h3>
-                    <div class="product-price">¥ 359.00</div>
                 </div>
             </div>
 
@@ -182,7 +225,6 @@
                 <img src="https://xinyuanbuhang.oss-cn-shenzhen.aliyuncs.com/%E6%96%B0%E8%A2%81%E5%B8%83%E8%A1%8C/10.jpg" alt="商品10" class="product-img">
                 <div class="product-meta">
                     <h3 class="product-name">新袁家纺商品10</h3>
-                    <div class="product-price">¥ 459.00</div>
                 </div>
             </div>
         </div>
